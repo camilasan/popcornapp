@@ -19,14 +19,14 @@
                     event.preventDefault();
                     OC.dialogs.filepicker(
                         t('settings', "Select a profile picture"),
-                        function (path) {
+                        function (files) {
                                 $.ajax({
                                     type: "POST",
                                     url: OC.generateUrl('/apps/popcornapp/list'),
-                                    data: { path: path }
+                                    data: { files: files, title: $('#title').val() }
                                 }).done(filesResponseHandler)
                             },
-                            false,
+                            true,
                             ["image/png", "image/jpeg"]
                     );
                 });
@@ -35,6 +35,5 @@
 })(jQuery, OC);
 
 function filesResponseHandler(data) {
-    console.log(data);
-    $('#files').text(data);
+    $('#files').text(data.data);
 }
