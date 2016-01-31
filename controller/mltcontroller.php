@@ -81,7 +81,7 @@ class MltController extends Controller {
                 $this->xml->endDocument(); 
                 $this->publishVideo(); 
                 
-                return new DataResponse(['data' => $this->dir.$this->title]);
+                return new DataResponse(['data' => $this->dir.$this->title.'.mp4']);
         }
     
     public function setPlaylists(){

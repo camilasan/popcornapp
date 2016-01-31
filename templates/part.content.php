@@ -6,6 +6,7 @@
             <label for="fileslist" id="selectfiles" style="padding:10px;border:1px solid #ccc;">Select files</label>
             <input type="file" name="files" id="fileslist" style="display:none"><br>
     </form>
-    <div id="files" style="padding:30px;">
+    <div id="files" style="padding:30px;display:none;">
+        <video width="600" height="400" controls><source src="" type="video/mp4"><source src="'.$title.'.mp4" type="video/mp4">Your browser does not support the video tag.</video>    
     </div>
 </div>

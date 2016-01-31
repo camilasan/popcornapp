@@ -35,5 +35,6 @@
 })(jQuery, OC);
 
 function filesResponseHandler(data) {
-    $('#files').text(data.data);
+    $('#files video').attr('src', data.data);
+    $('#files').show();
 }
