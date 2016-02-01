@@ -11,22 +11,27 @@
 (function ($, OC) {
 	$(document).ready(function () { 
             
-                $('#test').click(function (event) {
-                    alert('Blah!!');
+                $('#submit').click(function (event) {
+                        event.preventDefault();
+                        $.ajax({
+                            type: "POST",
+                            url: OC.generateUrl('/apps/popcornapp/video'),
+                            data: { title: $('#title').val() }
+                        }).done(displayVideo);
                 });
 
                 $('#selectfiles').click(function (event) {
                     event.preventDefault();
                     OC.dialogs.filepicker(
                         t('settings', "Select a profile picture"),
-                        function (files) {
+                        function (file) {
                                 $.ajax({
                                     type: "POST",
                                     url: OC.generateUrl('/apps/popcornapp/list'),
-                                    data: { files: files, title: $('#title').val() }
-                                }).done(filesResponseHandler)
+                                    data: { file: file }
+                                }).done(listFile)
                             },
-                            true,
+                            false,
                             ["image/png", "image/jpeg"]
                     );
                 });
@@ -34,7 +39,11 @@
 
 })(jQuery, OC);
 
-function filesResponseHandler(data) {
-    $('#files video').attr('src', data.data);
-    $('#files').show();
+function listFile(data) {
+    $('#files').append(data.file+'<br>');
+}
+
+function displayVideo(data) {
+    $('#video video').attr('src', data.data);
+    $('#video').show();
 }

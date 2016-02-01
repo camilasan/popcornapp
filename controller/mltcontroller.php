@@ -27,43 +27,35 @@ use XMLWriter;
 
 class MltController extends Controller {
 
-        private $userId;
-        private $userSession;
         private $xml;
         private $content;
         private $title;
-        private $dir;
-        private $fullPath;
-        
         protected $request;
         
-        public function __construct($AppName, IRequest $request, IUserSession $userSession, ILogger $logger, XMLWriter $xml){
+        public function __construct($AppName, IRequest $request, ILogger $logger, XMLWriter $xml){
                 parent::__construct($AppName, $request);
-                $this->userSession = $userSession;
                 $this->request = $request;
-                $this->userId = $this->userSession->getUser()->getUID();
                 $this->logger = $logger;
                 $this->view = new \OC\Files\view();
                 $this->xml = $xml;
+                $this->content = array();
+        }
+        
+        public function listFiles($file){
+            $fullPath = $this->view->getLocalFile($file);
+            $fileinfo = pathinfo($fullPath);
+            $dir = $fileinfo['dirname'].'/';
+            $filename = $fileinfo['filename'].'.'.$fileinfo['extension'];
+            $this->content[$dir] = $filename;
+
+            //$this->logger->debug($this->dir.$this->title, array('app' => 'popcornapp'));        
+            
+            return new DataResponse(['file' => $this->content]);
         }
 
-        public function createXML($files, $title){
-                $this->content = $files[0];
+        public function createXML($title){
                 $this->title = $title;
-                
-
-                $this->fullPath = $this->view->getLocalFile($this->content);
-                
-                $this->dir = pathinfo($this->view->getLocalFile($this->content));
-                $this->dir = $this->dir ? $this->dir['dirname'].'/' : '';
-                $tmp = pathinfo($this->view->getLocalFile($this->content));
-                $this->filename = $this->dir ? $tmp['filename'].'.'.$tmp['extension'] : '';
-                
-                //$this->view->mkdir($this->dir.$this->title);
-                
-                $this->logger->debug($this->dir.$this->title, array('app' => 'popcornapp'));
-                
-                $this->xml->openURI($this->dir.$this->title.'.xml');
+                $this->xml->openURI('/home/camila/Projects/Owncloud/owncloud/data/'.$this->title.'.xml');
                 $this->xml->setIndent(true);
                 $this->xml->setIndentString('    ');
                 $this->xml->startDocument('1.0', 'utf-8');
@@ -81,17 +73,17 @@ class MltController extends Controller {
                 $this->xml->endDocument(); 
                 $this->publishVideo(); 
                 
-                return new DataResponse(['data' => $this->dir.$this->title.'.mp4']);
+                return new DataResponse(['data' => '/home/camila/Projects/Owncloud/owncloud/data/'.$this->title.'.mp4']);
         }
     
     public function setPlaylists(){
         $i = 0;
-        //foreach ($this->content as $image) {
+        foreach ($this->content as $k=>$file) {
             $this->xml->startElement('producer');
                 $this->xml->writeAttribute('id', 'producer'.$i);  
                 $this->xml->startElement('property');
                     $this->xml->writeAttribute('name', 'resource');
-                    $this->xml->text($this->filename);         
+                    $this->xml->text($k.$file);         
                 $this->xml->endElement();
             $this->xml->endElement();
             $this->xml->startElement('playlist');
@@ -104,7 +96,7 @@ class MltController extends Controller {
                 $this->xml->endElement();                            
             $this->xml->endElement();                    
             $i++;
-        //}            
+        }            
     }    
     
     public function setTracks(){
@@ -165,7 +157,7 @@ class MltController extends Controller {
     }
     
     public function publishVideo(){
-        exec('cd '.$this->dir.' && melt6 -producer xml:'.$this->title.'.xml -consumer avformat:'.$this->title.'.mp4');
+        exec('cd /home/camila/Projects/Owncloud/owncloud/data/ && melt6 -producer xml:'.$this->title.'.xml -consumer avformat:'.$this->title.'.mp4');
     }                
 
 }
