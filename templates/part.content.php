@@ -9,8 +9,9 @@
             <button name="submit" id="submit" style="margin-top:30px;border:1px #ccc solid;padding:10px">Create video!</button><br>
     </form>
     <div id="files">
+        <ul></ul>
     </div>
     <div id="video" style="padding:30px;display:none;">
-        <video width="600" height="400" controls><source src="" type="video/mp4"><source src="'.$title.'.mp4" type="video/mp4">Your browser does not support the video tag.</video>    
+        <video width="600" height="400" controls><source type="video/mp4">Your browser does not support the video tag.</video>    
     </div>
 </div>

@@ -12,11 +12,12 @@
 	$(document).ready(function () { 
             
                 $('#submit').click(function (event) {
+                        var files = disp($('#files div').toArray());
                         event.preventDefault();
                         $.ajax({
                             type: "POST",
                             url: OC.generateUrl('/apps/popcornapp/video'),
-                            data: { title: $('#title').val() }
+                            data: { title: $('#title').val(), files: files }
                         }).done(displayVideo);
                 });
 
@@ -39,11 +40,19 @@
 
 })(jQuery, OC);
 
+function disp( divs ) {
+  var a = [];
+  for ( var i = 0; i < divs.length; i++ ) {
+    a.push( divs[ i ].innerHTML );
+  }
+  return a;
+}
+
 function listFile(data) {
-    $('#files').append(data.file+'<br>');
+    $('#files').append('<div>'+data.file+'</div>');
 }
 
 function displayVideo(data) {
-    $('#video video').attr('src', data.data);
+    $('#video video source').attr('src', data.data);
     $('#video').show();
 }

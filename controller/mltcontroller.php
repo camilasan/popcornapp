@@ -46,14 +46,11 @@ class MltController extends Controller {
             $fileinfo = pathinfo($fullPath);
             $dir = $fileinfo['dirname'].'/';
             $filename = $fileinfo['filename'].'.'.$fileinfo['extension'];
-            $this->content[$dir] = $filename;
-
-            //$this->logger->debug($this->dir.$this->title, array('app' => 'popcornapp'));        
-            
-            return new DataResponse(['file' => $this->content]);
+            return new DataResponse(['file' => $dir.$filename]);
         }
 
-        public function createXML($title){
+        public function createXML($title, $files){
+                $this->logger->debug($files, array('app' => 'popcornapp'));      
                 $this->title = $title;
                 $this->xml->openURI('/home/camila/Projects/Owncloud/owncloud/data/'.$this->title.'.xml');
                 $this->xml->setIndent(true);
@@ -61,12 +58,12 @@ class MltController extends Controller {
                 $this->xml->startDocument('1.0', 'utf-8');
                     $this->xml->startElement('mlt');
                         $this->xml->writeAttribute('title', $this->title);  
-                        $this->setPlaylists();
+                        $this->setPlaylists($files);
                         $this->xml->startElement('tractor');
                             $this->xml->writeAttribute('id', 'tractor0');  
                             $this->xml->writeAttribute('in', 0);  
                             $this->xml->writeAttribute('out', 630);  
-                            $this->setTracks();
+                            $this->setTracks($files);
                             $this->setTransitions();                       
                         $this->xml->endElement();
                     $this->xml->endElement(); 
@@ -76,14 +73,14 @@ class MltController extends Controller {
                 return new DataResponse(['data' => '/home/camila/Projects/Owncloud/owncloud/data/'.$this->title.'.mp4']);
         }
     
-    public function setPlaylists(){
-        $i = 0;
-        foreach ($this->content as $k=>$file) {
+    public function setPlaylists($files){
+        $i = 0;           
+        foreach ($files as $file) {
             $this->xml->startElement('producer');
                 $this->xml->writeAttribute('id', 'producer'.$i);  
                 $this->xml->startElement('property');
                     $this->xml->writeAttribute('name', 'resource');
-                    $this->xml->text($k.$file);         
+                    $this->xml->text($file);         
                 $this->xml->endElement();
             $this->xml->endElement();
             $this->xml->startElement('playlist');
@@ -99,15 +96,16 @@ class MltController extends Controller {
         }            
     }    
     
-    public function setTracks(){
+    public function setTracks($files){
         $this->xml->startElement('multitrack');
             $this->xml->writeAttribute('id', 'multitrack0');
-            $this->xml->startElement('track');
-                $this->xml->writeAttribute('producer', 'playlist0');
-            $this->xml->endElement();
-            $this->xml->startElement('track');
-                $this->xml->writeAttribute('producer', 'playlist1');
-            $this->xml->endElement();                       
+            $i = 0;           
+            foreach ($files as $file) {            
+                $this->xml->startElement('track');
+                    $this->xml->writeAttribute('producer', 'playlist'.$i);
+                $this->xml->endElement();  
+                $i++;
+            }
         $this->xml->endElement();        
     }        
     
