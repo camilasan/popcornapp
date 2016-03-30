@@ -30,6 +30,7 @@ class MltController extends Controller {
         private $xml;
         private $content;
         private $title;
+        private $logger;
         protected $request;
         
         public function __construct($AppName, IRequest $request, ILogger $logger, XMLWriter $xml){
@@ -40,6 +41,26 @@ class MltController extends Controller {
                 $this->xml = $xml;
                 $this->content = array();
         }
+        
+        public function getRequest(){
+            return $this->request;
+        }
+        
+        public function getLogger(){
+            return $this->logger;
+        }
+        
+        public function getView(){
+            return $this->view;
+        }
+        
+        public function getXml(){
+            return $this->xml;
+        }
+        
+        public function getContent(){
+            return $this->content;
+        }        
         
         public function listFiles($file){
             $fullPath = $this->view->getLocalFile($file);
