@@ -1,0 +1,246 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mlt producer="main bin" version="0.9.8" LC_NUMERIC="de_DE.UTF-8" title="Anonymous Submission" root="/home/camila">
+ <profile frame_rate_num="25" description="1024x576 16:9 PAL" width="1024" sample_aspect_den="1" display_aspect_den="9" frame_rate_den="1" progressive="1" sample_aspect_num="1" height="576" colorspace="601" display_aspect_num="16"/>
+ <producer id="1" in="0" out="326">
+  <property name="mlt_type">producer</property>
+  <property name="length">327</property>
+  <property name="eof">pause</property>
+  <property name="resource">Projects/Owncloud/owncloud/data/Photos/austria.JPG</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="loop">1</property>
+  <property name="meta.media.width">5184</property>
+  <property name="meta.media.height">3360</property>
+  <property name="mlt_service">pixbuf</property>
+  <property name="kdenlive:file_size">1334212</property>
+  <property name="kdenlive:file_size">1334212</property>
+  <property name="kdenlive:file_hash">4d004c145a01a36229b8f03f57e5de01</property>
+ </producer>
+ <producer id="2" in="0" out="250">
+  <property name="mlt_type">producer</property>
+  <property name="length">251</property>
+  <property name="eof">pause</property>
+  <property name="resource">Projects/Owncloud/owncloud/data/Photos/Squirrel.jpg</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="loop">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">768</property>
+  <property name="mlt_service">pixbuf</property>
+  <property name="kdenlive:file_size">233724</property>
+  <property name="kdenlive:file_hash">0f43fa5a262c476393018f7329080fa7</property>
+ </producer>
+ <producer id="3" in="0" out="188">
+  <property name="mlt_type">producer</property>
+  <property name="length">189</property>
+  <property name="eof">pause</property>
+  <property name="resource">Projects/Owncloud/owncloud/data/Photos/San Francisco.jpg</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="loop">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">683</property>
+  <property name="mlt_service">pixbuf</property>
+  <property name="kdenlive:file_size">216071</property>
+  <property name="kdenlive:file_hash">84d5d4f2e31ecc00680f5886645c59a2</property>
+ </producer>
+ <producer id="4" in="0" out="183">
+  <property name="mlt_type">producer</property>
+  <property name="length">184</property>
+  <property name="eof">pause</property>
+  <property name="resource">Projects/Owncloud/owncloud/data/Photos/Paris.jpg</property>
+  <property name="ttl">25</property>
+  <property name="aspect_ratio">1</property>
+  <property name="progressive">1</property>
+  <property name="seekable">1</property>
+  <property name="loop">1</property>
+  <property name="meta.media.width">1024</property>
+  <property name="meta.media.height">683</property>
+  <property name="mlt_service">pixbuf</property>
+  <property name="kdenlive:file_size">228761</property>
+  <property name="kdenlive:file_hash">0959a73dbc91b7c4fa8daa511aa00bb7</property>
+ </producer>
+ <playlist id="main bin" kdenlive:customeffects="&lt;customeffects/>&#xa;">
+  <property name="kdenlive:docproperties.documentid">1458067992261</property>
+  <property name="kdenlive:docproperties.enableproxy">0</property>
+  <property name="kdenlive:docproperties.generateimageproxy">0</property>
+  <property name="kdenlive:docproperties.generateproxy">0</property>
+  <property name="kdenlive:docproperties.kdenliveversion">15.12.2</property>
+  <property name="kdenlive:docproperties.position">311</property>
+  <property name="kdenlive:docproperties.profile">square_pal_wide</property>
+  <property name="kdenlive:docproperties.projectfolder">kdenlive</property>
+  <property name="kdenlive:docproperties.proxyextension">mpg</property>
+  <property name="kdenlive:docproperties.proxyimageminsize">2000</property>
+  <property name="kdenlive:docproperties.proxyminsize">1000</property>
+  <property name="kdenlive:docproperties.proxyparams">-s 640x480 -g 5 -qscale 6 -ab 128k -vcodec mpeg2video -acodec mp2</property>
+  <property name="kdenlive:docproperties.version">0.91</property>
+  <property name="kdenlive:docproperties.verticalzoom">1</property>
+  <property name="kdenlive:docproperties.zonein">0</property>
+  <property name="kdenlive:docproperties.zoneout">0</property>
+  <property name="kdenlive:docproperties.zoom">7</property>
+  <property name="kdenlive:documentnotes"/>
+  <property name="kdenlive:clipgroups">&lt;groups/>
+</property>
+  <property name="kdenlive:docproperties.renderaudiobitrate">160</property>
+  <property name="kdenlive:docproperties.renderbitrate">20</property>
+  <property name="kdenlive:docproperties.rendercategory">MP4</property>
+  <property name="kdenlive:docproperties.renderendguide">-1</property>
+  <property name="kdenlive:docproperties.renderexportaudio">0</property>
+  <property name="kdenlive:docproperties.renderguide">0</property>
+  <property name="kdenlive:docproperties.renderplay">0</property>
+  <property name="kdenlive:docproperties.renderprofile">H.264/AAC fast</property>
+  <property name="kdenlive:docproperties.renderratio">1</property>
+  <property name="kdenlive:docproperties.renderrescale">0</property>
+  <property name="kdenlive:docproperties.renderrescaleheight">180</property>
+  <property name="kdenlive:docproperties.renderrescalewidth">320</property>
+  <property name="kdenlive:docproperties.renderscanning">0</property>
+  <property name="kdenlive:docproperties.renderstartguide">-1</property>
+  <property name="kdenlive:docproperties.rendertcoverlay">0</property>
+  <property name="kdenlive:docproperties.rendertctype">0</property>
+  <property name="kdenlive:docproperties.rendertwopass">0</property>
+  <property name="kdenlive:docproperties.renderurl">Downloads/test.mp4</property>
+  <property name="kdenlive:docproperties.renderzone">0</property>
+  <property name="xml_retain">1</property>
+  <entry producer="1" in="0" out="124"/>
+  <entry producer="2" in="0" out="124"/>
+  <entry producer="3" in="0" out="124"/>
+  <entry producer="4" in="0" out="124"/>
+ </playlist>
+ <producer id="black" in="0" out="500">
+  <property name="mlt_type">producer</property>
+  <property name="length">15000</property>
+  <property name="eof">pause</property>
+  <property name="resource">black</property>
+  <property name="aspect_ratio">0</property>
+  <property name="mlt_service">colour</property>
+ </producer>
+ <playlist id="black_track">
+  <entry producer="black" in="0" out="592"/>
+ </playlist>
+ <playlist id="playlist0">
+  <property name="kdenlive:track_name">Austria</property>
+  <blank length="332"/>
+  <entry producer="1" in="0" out="260"/>
+ </playlist>
+ <playlist id="playlist3">
+  <property name="kdenlive:track_name">Sq</property>
+  <property name="kdenlive:locked_track">0</property>
+  <property name="kdenlive:composite">1</property>
+  <blank length="211"/>
+  <entry producer="2" in="0" out="215"/>
+ </playlist>
+ <playlist id="playlist4">
+  <property name="kdenlive:track_name">SF</property>
+  <property name="kdenlive:locked_track">0</property>
+  <property name="kdenlive:composite">1</property>
+  <blank length="118"/>
+  <entry producer="3" in="0" out="187"/>
+ </playlist>
+ <playlist id="playlist5">
+  <property name="kdenlive:track_name">Paris</property>
+  <property name="kdenlive:locked_track">0</property>
+  <property name="kdenlive:composite">1</property>
+  <entry producer="4" in="0" out="182"/>
+ </playlist>
+ <tractor id="maintractor" in="0" global_feed="1" title="Anonymous Submission" out="592">
+  <track producer="black_track"/>
+  <track producer="playlist0"/>
+  <track producer="playlist3"/>
+  <track producer="playlist4"/>
+  <track producer="playlist5"/>
+  <transition id="transition0">
+   <property name="a_track">0</property>
+   <property name="b_track">2</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition1">
+   <property name="a_track">0</property>
+   <property name="b_track">3</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition2">
+   <property name="a_track">0</property>
+   <property name="b_track">4</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="combine">1</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition3">
+   <property name="a_track">0</property>
+   <property name="b_track">1</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">mix</property>
+   <property name="always_active">1</property>
+   <property name="internal_added">237</property>
+   <property name="combine">1</property>
+  </transition>
+  <transition id="transition4" in="118" out="182">
+   <property name="a_track">3</property>
+   <property name="b_track">4</property>
+   <property name="version">0,1</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">frei0r.multiply</property>
+   <property name="automatic">1</property>
+   <property name="force_track">0</property>
+  </transition>
+  <transition id="transition5" in="211" out="305">
+   <property name="a_track">2</property>
+   <property name="b_track">3</property>
+   <property name="version">0,1</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">frei0r.multiply</property>
+   <property name="automatic">1</property>
+   <property name="force_track">0</property>
+  </transition>
+  <transition id="transition6" in="332" out="426">
+   <property name="a_track">1</property>
+   <property name="b_track">2</property>
+   <property name="version">0,1</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">frei0r.multiply</property>
+   <property name="automatic">1</property>
+   <property name="force_track">0</property>
+  </transition>
+  <transition id="transition7">
+   <property name="a_track">2</property>
+   <property name="b_track">3</property>
+   <property name="version">0,9</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">frei0r.cairoblend</property>
+   <property name="internal_added">237</property>
+  </transition>
+  <transition id="transition8">
+   <property name="a_track">3</property>
+   <property name="b_track">4</property>
+   <property name="version">0,9</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">frei0r.cairoblend</property>
+   <property name="internal_added">237</property>
+   <property name="disable">0</property>
+  </transition>
+  <transition id="transition9">
+   <property name="a_track">1</property>
+   <property name="b_track">2</property>
+   <property name="version">0,9</property>
+   <property name="mlt_type">transition</property>
+   <property name="mlt_service">frei0r.cairoblend</property>
+   <property name="internal_added">237</property>
+  </transition>
+ </tractor>
+</mlt>

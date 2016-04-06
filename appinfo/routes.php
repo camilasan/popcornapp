@@ -20,7 +20,9 @@
 return [
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
-	   ['name' => 'mlt#createXML', 'url' => '/video', 'verb' => 'POST'],
-	   ['name' => 'mlt#listFiles', 'url' => '/list', 'verb' => 'POST']
+	   ['name' => 'mlt#listFiles', 'url' => '/list', 'verb' => 'POST'],
+	   ['name' => 'mlt#createVideo', 'url' => '/video', 'verb' => 'POST'],
+	   ['name' => 'mlt#createXML', 'url' => '/video1', 'verb' => 'POST'],
+	   
     ]
 ];

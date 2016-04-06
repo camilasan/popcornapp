@@ -17,7 +17,7 @@
                         $.ajax({
                             type: "POST",
                             url: OC.generateUrl('/apps/popcornapp/video'),
-                            data: { title: $('#title').val(), files: files }
+                            data: { title: $('#title').val(), files: files, theme: $('#theme').val() }
                         }).done(displayVideo);
                 });
 
@@ -53,6 +53,7 @@ function listFile(data) {
 }
 
 function displayVideo(data) {
+    $('#error').text(data.error);
     $('#video video source').attr('src', data.data);
     $('#video').show();
 }
