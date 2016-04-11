@@ -20,9 +20,12 @@
                 </div>                
                 <button name="submit" id="submit">Create video</button>
             </div>   
-    </form>    
+    </form>      
     <div id="progress"><img src="/apps/popcornapp/img/ajax-loader.gif"></div>
     <div id="video">
-        <video width="600" height="400" controls><source type="video/mp4">Your browser does not support the video tag.</video>    
+        <video width="600" height="480" controls>
+            <source type="video/ogg">
+            Your browser does not support the video tag.
+        </video>    
     </div>
 </div>

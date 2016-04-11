@@ -12,13 +12,24 @@
 	$(document).ready(function () { 
             
                 $('#submit').click(function (event) {
+                        event.preventDefault(); 
                         var files = disp($('#files div').toArray());
-                        event.preventDefault();
-                        $.ajax({
-                            type: "POST",
-                            url: OC.generateUrl('/apps/popcornapp/video'),
-                            data: { title: $('#title').val(), files: files, theme: $('#theme').val() }
-                        }).done(displayVideo);
+                        
+                        if($('#title').val()=='' || files==''){
+                            $('#error').text('Houston, we have a problem. Please, fill up all fields.');
+                        }else{
+                            $('#error').text('');
+                            $('#progress').show();                            
+                            $.ajax({
+                                type: "POST",
+                                url: OC.generateUrl('/apps/popcornapp/video'),
+                                data: { title: $('#title').val(), files: files, theme: $('#theme').val() },  
+                                fail: function (jqxhr, status) {
+                                    $('#error').text('Houston, we have a problem while sending your data: '+status);
+                                    $('#progress').hide(); 
+                                }
+                            }).done(displayVideo);
+                        }
                 });
 
                 $('#selectfiles').click(function (event) {
@@ -53,7 +64,10 @@ function listFile(data) {
 }
 
 function displayVideo(data) {
+    //OC.linkToRemote('webdav') + OC.joinPaths('/popcornapp', data.src)
+    $('#error').text('');
     $('#error').text(data.error);
-    $('#video video source').attr('src', data.data);
+    $('#video video source').attr('src', '/apps/popcornapp/themes/'+data.src);
     $('#video').show();
+    $('#progress').hide();
 }

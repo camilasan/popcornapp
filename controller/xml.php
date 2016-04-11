@@ -12,18 +12,24 @@
 namespace OCA\PopcornApp\Controller;
 
 use SimpleXMLElement;
+use OCP\AppFramework\Http\DataResponse;
 
 class XML {
 
         private $title;
         private $files;
         private $theme;
+        private $xml_view;
+        private $path;
         
-        public function __construct($title, $files, $theme){
+        public function __construct($title, $files, $theme, $user, $app, $settings){
             $themes = array('blackandwhite', 'thehappyone');
             $this->title = $title;
             $this->files = $files;
-            $this->theme = '/home/camila/Projects/Personal/popcornapp/themes/'.$themes[$theme].'.xml';
+            $this->theme = '/home/camila/Projects/Owncloud/owncloud/apps/popcornapp/themes/'.$themes[$theme].'.xml';
+            $this->user = $user;
+            $this->app = $app;
+            $this->settings = $settings;  
         }
         
         public function getTheme(){
@@ -39,9 +45,9 @@ class XML {
                 if ($i == 4) break;
                 $resource->property[3] = $this->files[$i];
                 $i++;
-            }
+            }            
             
-            return $new_xml_obj->asXML('/home/camila/Projects/Owncloud/owncloud/data/'.$this->title.'.xml');
+            return $new_xml_obj->asXML('/home/camila/Projects/Owncloud/owncloud/apps/popcornapp/themes/'.$this->title.'.xml');
         }        
        
 
