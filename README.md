@@ -1,9 +1,9 @@
 # Popcorn
-Place this app in **owncloud/apps/**
+Place this app in **nextcloud/apps/**
 
 ## Publish to App Store
 
-First get an account for the [App Store](http://apps.owncloud.com/) then run:
+First get an account for the [App Store](http://apps.nextcloud.com/) then run:
 
     make appstore_package
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * ownCloud - popcorn
+ * Nextcloud - popcorn
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
@@ -12,7 +12,6 @@
 namespace OCA\PopcornApp\Controller;
 
 use SimpleXMLElement;
-use OCP\AppFramework\Http\DataResponse;
 
 class XML {
 
@@ -26,7 +25,7 @@ class XML {
             $themes = array('blackandwhite', 'thehappyone');
             $this->title = $title;
             $this->files = $files;
-            $this->theme = '/home/camila/Projects/Owncloud/owncloud/apps/popcornapp/themes/'.$themes[$theme].'.xml';
+            $this->theme = '/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$themes[$theme].'.xml';
             $this->user = $user;
             $this->app = $app;
             $this->settings = $settings;  
@@ -47,7 +46,7 @@ class XML {
                 $i++;
             }            
             
-            return $new_xml_obj->asXML('/home/camila/Projects/Owncloud/owncloud/apps/popcornapp/themes/'.$this->title.'.xml');
+            return $new_xml_obj->asXML('/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$this->title.'.xml');
         }        
        
 

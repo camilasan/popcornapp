@@ -9,6 +9,6 @@
     <namespace>PopcornApp</namespace>
     <category>other</category>
     <dependencies>
-        <owncloud min-version="8.1" />
+        <nextcloud min-version="10" />
     </dependencies>
 </info>
