@@ -52,21 +52,25 @@ class MltController extends Controller {
         }
 
         public function listFiles($file){
+//             error_log('public function listFiles', 0);
+//             error_log(var_dump($file), 0);
             $file_view = new \OC\Files\view();
             $fullPath = $file_view->getLocalFile($file);
-            $fileinfo = pathinfo($fullPath);
-            $dir = $fileinfo['dirname'].'/';
-            $filename = $fileinfo['filename'].'.'.$fileinfo['extension'];
-            $this->preview = new \OC\Preview('', '/', $fullPath, 100, 75, true);
+//             error_log('$fullPath', 0);
+//             error_log($fullPath, 0);
+//             $fileinfo = pathinfo($fullPath);
+//             $dir = $fileinfo['dirname'].'/';
+//             $filename = $fileinfo['filename'].'.'.$fileinfo['extension'];
+//             $this->preview = new \OC\Preview('', '/', $fullPath, 100, 75, true);
 /*			$this->preview->setMaxX(80);
 			$this->preview->setMaxY(80);
 			$this->preview->setScalingUp(true);
 			$this->preview->setKeepAspect(true);     */
             //return new DataResponse(['file' => $file]);
             //var_dump($this->preview->getPreview()->imgPath);
-            var_dump($this->preview->getPreview());
-            var_dump($this->preview->getPreview()->data());
-            return new DataResponse(['file' => $this->preview->getPreview()]);
+//             var_dump($this->preview->getPreview());
+//             var_dump($this->preview->getPreview()->data());
+            return new DataResponse(['file' => $fullPath]);
         }
 
         private function cleanUpTitle($title){
@@ -85,10 +89,10 @@ class MltController extends Controller {
             $error = null;
             $result = $xml->setProducers();
             if($result){
-                exec('cd /media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/ && melt6 -producer xml:'.$title.'.xml -consumer avformat:'.$title.'.ogg');
+                exec('cd /media/camila/home@opensuse/camila/Projects/Nextcloud/server/apps/popcornapp/themes/ && melt -producer xml:'.$title.'.xml -consumer avformat:'.$title.'.ogg');
                 $xml_view = new \OC\Files\View('/' . $this->current_user . '/files');
                 $xml_view->mkdir('popcornapp');
-                $content = fopen('/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$title.'.ogg', 'r+');
+                $content = fopen('/media/camila/home@opensuse/camila/Projects/Nextcloud/server/apps/popcornapp/themes/'.$title.'.ogg', 'r+');
                 $xml_view->file_put_contents('/popcornapp/'.$title.'.ogg', $content);
             }else $error = 'Something went wrong! We all are going to die!';
 

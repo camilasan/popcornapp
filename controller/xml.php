@@ -25,7 +25,7 @@ class XML {
             $themes = array('blackandwhite', 'thehappyone');
             $this->title = $title;
             $this->files = $files;
-            $this->theme = '/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$themes[$theme].'.xml';
+            $this->theme = '/media/camila/home@opensuse/camila/Projects/Nextcloud/server/apps/popcornapp/themes/'.$themes[$theme].'.xml';
             $this->user = $user;
             $this->app = $app;
             $this->settings = $settings;
@@ -46,7 +46,7 @@ class XML {
                 $i++;
             }
 
-            return $new_xml_obj->asXML('/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$this->title.'.xml');
+            return $new_xml_obj->asXML('/media/camila/home@opensuse/camila/Projects/Nextcloud/server/apps/popcornapp/themes/'.$this->title.'.xml');
         }
 
 

@@ -35,7 +35,7 @@
                 $('#selectfiles').click(function (event) {
                     event.preventDefault();
                     OC.dialogs.filepicker(
-                        t('settings', "Select a profile picture"),
+                        t('settings', "Select a picture"),
                         function (file) {
                                 $.ajax({
                                     type: "POST",
@@ -60,6 +60,7 @@ function disp( divs ) {
 }
 
 function listFile(data) {
+    console.log(JSON.stringify(data));
     $('#files').append('<div>'+data.file+'</div>');
 }
 
