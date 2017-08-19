@@ -1,12 +1,12 @@
 <?php
 /**
- * ownCloud - popcorn
+ * Nextcloud - popcorn
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 namespace OCA\PopcornApp\Tests\Controller;
@@ -24,12 +24,12 @@ class PageControllerTest extends PHPUnit_Framework_TestCase {
 
 	public function setUp() {
                 parent::setUp();
-                
+
                 $app = new App('popcornapp');
                 $this->container = $app->getContainer();
-        
+
 		$request = $this->getMockBuilder('OCP\IRequest')->getMock();
-		
+
                 //echo var_dump($userSession);
 		$this->controller = new PageController(
 			'popcornapp', $request

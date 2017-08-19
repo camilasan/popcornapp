@@ -6,7 +6,7 @@
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 namespace OCA\PopcornApp\AppInfo;

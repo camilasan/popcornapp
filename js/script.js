@@ -5,28 +5,28 @@
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 (function ($, OC) {
-	$(document).ready(function () { 
-            
+	$(document).ready(function () {
+
                 $('#submit').click(function (event) {
-                        event.preventDefault(); 
+                        event.preventDefault();
                         var files = disp($('#files div').toArray());
-                        
+
                         if($('#title').val()=='' || files==''){
                             $('#error').text('Houston, we have a problem. Please, fill up all fields.');
                         }else{
                             $('#error').text('');
-                            $('#progress').show();                            
+                            $('#progress').show();
                             $.ajax({
                                 type: "POST",
                                 url: OC.generateUrl('/apps/popcornapp/video'),
-                                data: { title: $('#title').val(), files: files, theme: $('#theme').val() },  
+                                data: { title: $('#title').val(), files: files, theme: $('#theme').val() },
                                 fail: function (jqxhr, status) {
                                     $('#error').text('Houston, we have a problem while sending your data: '+status);
-                                    $('#progress').hide(); 
+                                    $('#progress').hide();
                                 }
                             }).done(displayVideo);
                         }

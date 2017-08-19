@@ -1,12 +1,12 @@
 <?php
 /**
- * ownCloud - popcorn
+ * Nextcloud - popcorn
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 use OCP\AppFramework\App;

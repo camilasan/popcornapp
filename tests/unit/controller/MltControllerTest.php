@@ -1,12 +1,12 @@
 <?php
 /**
- * ownCloud - popcorn
+ * Nextcloud - popcorn
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 namespace OCA\PopcornApp\Tests\Controller;
@@ -32,7 +32,7 @@ class MltControllerTest extends PHPUnit_Framework_TestCase {
 
         public function setUp() {
                 parent::setUp();
-                
+
                 $app = new App('popcornapp');
                 $this->container = $app->getContainer();
 
@@ -44,7 +44,7 @@ class MltControllerTest extends PHPUnit_Framework_TestCase {
                         'popcornapp', $this->request, $this->session, $this->conf
                 );
         }
-        
+
         public function testConstruct() {
                 $result = $this->controller;
 
@@ -52,21 +52,21 @@ class MltControllerTest extends PHPUnit_Framework_TestCase {
                 $this->assertTrue($result->getRequest() instanceof \OCP\IRequest);
                 $this->assertTrue($result->getView() instanceof \OC\Files\view);
                 $this->assertTrue(is_array($result->getContent()));
-        }      
-        
+        }
+
         public function testListFiles() {
                 $file = '/avatar.jpg';
                 $result = $this->controller->listFiles($file);
                 $expectedResponse = new DataResponse(['file' => '/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/data'.$file]);
                 $this->assertEquals($expectedResponse, $result);
-        }  
-        
+        }
+
         public function testCreateVideo(){
                 $result = $this->controller->createVideo('Test', array('/data/Pictures/holiday1.jpg', '/data/Pictures/holiday2.jpg', '/data/Pictures/holiday3.jpg', '/data/Pictures/holiday4.jpg'), 0);
                 //$result = $this->controller->saveVideo();
                 echo var_dump($result);
-        }          
-        
-        
+        }
+
+
 
 }

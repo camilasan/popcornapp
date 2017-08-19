@@ -6,7 +6,7 @@
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 /**
@@ -23,6 +23,6 @@ return [
 	   ['name' => 'mlt#listFiles', 'url' => '/list', 'verb' => 'POST'],
 	   ['name' => 'mlt#createVideo', 'url' => '/video', 'verb' => 'POST'],
 	   ['name' => 'mlt#createXML', 'url' => '/video1', 'verb' => 'POST'],
-	   
+
     ]
 ];

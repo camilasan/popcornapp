@@ -1,12 +1,12 @@
 <?php
 /**
- * ownCloud - popcorn
+ * Nextcloud - popcorn
  *
  * This file is licensed under the Affero General Public License version 3 or
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 namespace OCA\PopcornApp\Tests\Controller;
@@ -23,7 +23,7 @@ class XMLTest extends PHPUnit_Framework_TestCase {
 
         public function setUp() {
                 parent::setUp();
-                
+
                 $app = new App('popcornapp');
                 $this->container = $app->getContainer();
 
@@ -32,17 +32,17 @@ class XMLTest extends PHPUnit_Framework_TestCase {
                         'Test', array('/data/Pictures/holiday1.jpg', '/data/Pictures/holiday2.jpg', '/data/Pictures/holiday3.jpg', '/data/Pictures/holiday4.jpg'), 1
                 );
         }
-        
+
         public function testGetTheme(){
                 $result = $this->controller->getTheme();
                 echo ($result);
-        } 
-        
+        }
+
         public function testSetProducers(){
                 $result = $this->controller->setProducers();
                 echo ($result);
-        }          
-        
-        
+        }
+
+
 
 }

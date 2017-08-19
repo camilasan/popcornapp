@@ -6,7 +6,7 @@
  * later. See the COPYING file.
  *
  * @author Camila Ayres <hello@camila.codes>
- * @copyright Camila Ayres 2016
+ * @copyright Camila Ayres 2017
  */
 
 namespace OCA\PopcornApp\Controller;
@@ -20,7 +20,7 @@ class XML {
         private $theme;
         private $xml_view;
         private $path;
-        
+
         public function __construct($title, $files, $theme, $user, $app, $settings){
             $themes = array('blackandwhite', 'thehappyone');
             $this->title = $title;
@@ -28,13 +28,13 @@ class XML {
             $this->theme = '/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$themes[$theme].'.xml';
             $this->user = $user;
             $this->app = $app;
-            $this->settings = $settings;  
+            $this->settings = $settings;
         }
-        
+
         public function getTheme(){
             return $this->theme;
-        } 
-        
+        }
+
         public function setProducers(){
             $xml_obj = simplexml_load_file($this->theme);
             $xml_obj = $xml_obj->asXML();
@@ -44,10 +44,10 @@ class XML {
                 if ($i == 4) break;
                 $resource->property[3] = $this->files[$i];
                 $i++;
-            }            
-            
+            }
+
             return $new_xml_obj->asXML('/media/camila/home@opensuse/camila/Projects/Nextcloud/nextcloud/apps/popcornapp/themes/'.$this->title.'.xml');
-        }        
-       
+        }
+
 
 }
